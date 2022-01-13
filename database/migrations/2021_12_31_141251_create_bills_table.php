@@ -15,10 +15,10 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id('registration_number');
-            $table->timestamps();
             $table->string('description');
             $table->foreignId('bill_categories_id')->constrained();
             $table->float('total_value', 9, 2);
+            $table->timestamps();
         });
     }
 

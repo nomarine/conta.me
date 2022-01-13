@@ -20,6 +20,15 @@ class BillCategoriesInsertValues extends Migration
         DB::table('bill_categories')->insert(
             ['title' => 'Food'],
         );
+        DB::table('bill_categories')->insert(
+            ['title' => 'Automobile'],
+        );
+        DB::table('bill_categories')->insert(
+            ['title' => 'Leisure'],
+        );
+        DB::table('bill_categories')->insert(
+            ['title' => 'Others'],
+        );
     }
 
     /**
