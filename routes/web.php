@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\MainController@main')->name('index');
+Route::get('/', 'App\Http\Controllers\IndexController@index')->name('site.index');
 
-Route::get('bills', 'App\Http\Controllers\BillController@bill')->name('bill.index');
+Route::get('bills', 'App\Http\Controllers\BillController@bill')->name('site.bill.index');
+Route::get('bill_registration', 'App\Http\Controllers\BillController@bill_registration')->name('site.bill.registration');
+Route::post('bill_registration/save', 'App\Http\Controllers\BillController@save')->name('site.bill.save');
