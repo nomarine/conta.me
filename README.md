@@ -2,11 +2,9 @@
 
 ## About Conta.me
 
-Solução para ajudar a você ficar de olho na sua saúde financeira!
+A solution being developed to help you keep track about your finances! 
 
-Projeto puramente acadêmico para colocar em prática meus conhecimentos sobre a framework Laravel.
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This project's purpose is purely academic. What I intend to do here is to put my knowledge on the Laravel framework and software development into work.
 
 ## Learning Laravel
 
