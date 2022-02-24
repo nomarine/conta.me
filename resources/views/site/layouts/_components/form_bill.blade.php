@@ -11,7 +11,13 @@
                     <option value="{{ $category->id }}">{{ $category->title }}</option>
                 @endforeach
         </select>
-        <input type="submit"></button>
+
+        <div class="buttons">
+            <input type="submit"></input>    
+            <button class="btn-evaluate" {{ session()->exists('success') ? 'enabled' : 'disabled'}}>Teste</button>
+        </div>
+
+        
     </form>
 </div>
 
