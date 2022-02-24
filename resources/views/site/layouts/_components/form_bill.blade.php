@@ -4,14 +4,14 @@
         @csrf
         <input name="description" type="text" placeholder="Descrição" class="">
 
-        <input name="value" type="text" placeholder="Valor" class="">
+        <input name="value" type="number" placeholder="Valor" step="0.01">
         <select name="bill_categories_id" class="">
             <option value="">Qual o motivo do contato?</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->title }}</option>
                 @endforeach
         </select>
-        <input type="submit" class=""></button>
+        <input type="submit"></button>
     </form>
 </div>
 

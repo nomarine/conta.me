@@ -17,7 +17,7 @@ class CreateBillsTable extends Migration
             $table->id('registration_number');
             $table->string('description');
             $table->foreignId('bill_categories_id')->constrained();
-            $table->float('value', 9, 2);
+            $table->decimal('value', 8, 2);
             $table->timestamps();
         });
     }

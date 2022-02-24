@@ -15,6 +15,7 @@ class CreateBillCategoriesTable extends Migration
     {
         Schema::create('bill_categories', function (Blueprint $table) {
             $table->id();
+            $table->integer('code')->unique;
             $table->string('title');
             $table->timestamps();
         });

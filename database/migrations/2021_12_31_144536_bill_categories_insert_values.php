@@ -14,21 +14,40 @@ class BillCategoriesInsertValues extends Migration
     public function up()
     {
         //
+        $list = [
+            '1' => 'Saúde', 
+            '2' => 'Alimentação', 
+            '3' => 'Transporte', 
+            '4' => 'Despesas Pessoais',
+            '5' => 'Comunicação',
+            '6' => 'Lazer'
+        ];
+
+        $ordered_list = asort($list);
+
+        foreach($list as $key => $item){
+            DB::table('bill_categories')->insert(
+                array('code' => $key,
+                      'title' => $item
+                )
+            );
+        }
+
         DB::table('bill_categories')->insert(
-            ['title' => 'Health'],
+            array('code' => '10',
+                  'title' => 'Outros'
+            )
         );
-        DB::table('bill_categories')->insert(
-            ['title' => 'Food'],
-        );
-        DB::table('bill_categories')->insert(
-            ['title' => 'Automobile'],
-        );
-        DB::table('bill_categories')->insert(
-            ['title' => 'Leisure'],
-        );
-        DB::table('bill_categories')->insert(
-            ['title' => 'Others'],
-        );
+
+        /* DB::table('bill_categories')->insert(array(
+            array('title' => 'Outros'),
+            array('title' => 'Saúde'),
+            array('title' => 'Alimentação'),
+            array('title' => 'Transporte'),
+            array('title' => 'Despesas Pessoais'),
+            array('title' => 'Comunicação'),
+            array('title' => 'Lazer')
+        )); */
     }
 
     /**

@@ -2,16 +2,18 @@
 
 <div class="records">
 @foreach($records as $bill => $info)
-        <h2>Record #{{$info->registration_number}}</h2>
+        <h2>Registro #{{$info->registration_number}}</h2>
     <p>
-        Description: {{$info->description}}<br>
-        Cost: {{$info->total_value}}<br>
-        Category: {{$info->title}}<br>
+        Descrição: {{$info->description}}<br>
+        Custo: R$ {{number_format($info->value, 2, ',', '.') }}<br>
+        Categoria: {{$info->title}}<br>
     </p>
 @endforeach
 </div>
 
-<button><a href="{{ route('site.bill.registration') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Incluir conta</a></button>
+<a href="{{ route('site.bill.registration') }}">
+    <button class="button-center">Incluir conta</button>
+</a>
 
 <div class='total'>
     <p>Total de registros: {{ $total }}</p>
