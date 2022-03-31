@@ -14,7 +14,7 @@
 
         <div class="buttons">
             <input type="submit"></input>    
-            <button class="btn-evaluate" {{ session()->exists('success') ? 'enabled' : 'disabled'}}>Teste</button>
+            <button type="button" class="btn-evaluate" {{ session()->exists('success') ? 'enabled' : 'disabled'}}>Teste</button>
         </div>
 
         
@@ -27,8 +27,10 @@
 </div>
 @endif
 
-<!-- <div style="position: sticky; background-color: red; top: 0px; left: 0px; width: 100%">
-    <pre>
-        {{ print_r($errors) }}
-    </pre>
-</div> -->
+@if($errors->any())
+<div style="position: sticky; background-color: red; top: 0px; left: 0px; width: 100%">
+        @foreach($errors->all() as $error)
+            <p>{{$error}}</p>
+        @endforeach
+</div>
+@endif
