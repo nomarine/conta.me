@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\LogForm;
 
 class LogFormMiddleware
 {
@@ -16,6 +17,13 @@ class LogFormMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        //return $next($request);
+        $request_log = json_encode($request->all());
+
+        LogForm::create([
+            'request' => $request_log
+        ]);
+
         return $next($request);
     }
 }

@@ -15,6 +15,7 @@ class CreateLogFormsTable extends Migration
     {
         Schema::create('log_forms', function (Blueprint $table) {
             $table->id();
+            $table->json('request');
             $table->timestamps();
         });
     }

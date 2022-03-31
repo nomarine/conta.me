@@ -17,4 +17,4 @@ Route::get('/', 'App\Http\Controllers\IndexController@index')->name('site.index'
 
 Route::get('bills', 'App\Http\Controllers\BillController@bill')->name('site.bill.index');
 Route::get('bill_registration', 'App\Http\Controllers\BillController@bill_registration')->name('site.bill.registration');
-Route::post('bill_registration/save', 'App\Http\Controllers\BillController@save')->name('site.bill.save');
+Route::middleware('log.form')->post('bill_registration/save', 'App\Http\Controllers\BillController@save')->name('site.bill.save');
